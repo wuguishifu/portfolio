@@ -3,6 +3,7 @@ export type Page = {
     title: string;
     meta: string;
     image_path: string;
+    hide_shadow?: boolean;
     blocks: {
         type: string;
     }[];
@@ -14,6 +15,7 @@ export type BlockSplit = {
     section_title: string;
     section_text: string;
     section_image: string;
+    force_show_shadow?: boolean;
     section_button?: {
         text: string;
         link: string;

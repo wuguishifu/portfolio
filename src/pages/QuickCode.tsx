@@ -33,7 +33,7 @@ function Block(props: BlockProps) {
 
     switch (block.type) {
         case 'carousel':
-            return <Carousel block={block as BlockCarousel} image_path={properties.image_path} background={properties.background} />;
+            return <Carousel block={block as BlockCarousel} image_path={properties.image_path} background={properties.background} hide_shadow={properties.hide_shadow} />;
         case 'text':
             return <Text block={block as BlockText} />;
         case 'split':

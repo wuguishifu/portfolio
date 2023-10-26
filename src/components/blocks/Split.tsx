@@ -32,7 +32,7 @@ export default ({ properties, block, image_path }: SplitProps) => {
                 </div>
                 <div className="flex-1">
                     <img
-                        className="shadow rounded-lg"
+                        className={`rounded-lg ${(properties.hide_shadow && !block.force_show_shadow) ? '' : 'shadow'}`}
                         src={image_path + block.section_image}
                         alt={block.section_image}
                     />

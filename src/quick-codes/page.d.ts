@@ -3,6 +3,7 @@ export type Page = {
     title: string;
     meta: string;
     image_path: string;
+    hide_shadow?: boolean;
     blocks: {
         type: string;
     }[];

@@ -1,0 +1,57 @@
+{
+    "title": "Mujank",
+    "meta": "mujank",
+    "image_path": "/projects/mujank/",
+    "background": "gradient-blurple",
+    "hide_shadow": true,
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Mujank",
+            "section_text": "Mujank is a full-featured gacha game I built to use with my friends in Discord. It features a full-fledged economy, a shop, and a gacha system. It's built in Python using Discord's bot API, and has an HTML/CSS/JS frontend hosted on Node.js for viewing player stats.",
+            "section_image": "mujank-main.png"
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "rolling.png",
+                "decks.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "One of the most fun parts of this project to implement was the daily rolling. First, every day, every user that was signed up would get 3 free rolls. Then, they could use their 3 rolls in the #rolling channel. Me and the other original members collected pictures of our friends and assigned them all titles, rarities, and other meta data. The rarities were weighted, so cards that had a higher rating were much less likely to show up.<br><br>It was especially fun making this system, because most of our discord server would get really hyped whenever the daily roll reset happened, and it became a fun event in our server for the duration of the project."
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "For the Discord bot, I used the Discord API to create a bot listener. This bot would listen for sepcific commands sent in the discord server, and then would run an async function to handle the command. For example, when a player sent \"*r\" to the chat, the bot would run the <code>summon_card()</code> command. This command would then check the database to see if the users had rolls available, and if so would send a random card to the discord channel. Most of the responses that the bot sent were in the form of embeds, which would use Discord's custom embed displaying to show the card's image, name, and other stats.<br><br>More complex functions that involved multi-step processes were more difficult to implement, as the functions would have to start a callback, wait for a user's response, and then continue the function. Overall, it was challenging and very fun to come up with unique solutions on how to handle user interactions, such as trading cards between members.",
+            "section_image": "community.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "For more complicated features such as viewing your balance history, I also build a simple website. People could use this website to search for cards, check what cards they own, see their balance history, etc. The backend was built in Node.js and the frontend was built using vanilla HTML, CSS, and JS. For displaying information such as the balance history, I tried a few different methods. The first method was to use MATLAB to construct the graphs. Because I have lots of MATLAB experience, this was the easiest method to implement. To do this, whenever a user went to their bank page, I would run a MATLAB script that would generate a graph and save it as an image, then I would serve the image to the user. This wasn't very user friendly, however, because there was a somewhat large delay due to the processing time of saving the image and then serving it.",
+            "section_image": "bank.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "My next attempt was to use Plotly.js. This allowed me to create graphs using JavaScript arrays. Because the graphs were created in-browser, it was much faster than waiting for the backend to generate a graph image and then serve it. It also has other benefits such as allowing users to zoom in and out and move around the graph.",
+            "section_image": "website-balance.png",
+            "force_show_shadow": true
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Tech Stack",
+            "section_text": "The majority of Mujank was built in Python using Discord's bot API and the asyncio package. The website counterpart was built in vanilla HTML, CSS, and JS, and was served using a Node.js backend. The entire project was hosted on a Raspberry Pi 4, which was a fun challenge to get working. I had to set up a reverse proxy using NGINX to route traffic to the correct ports, and I had to set up a dynamic DNS service to allow people to connect to the server using a domain name.<br><br>Overall, it was a fun project to work on, and I learned a lot about Python, Node.js, and Raspberry Pi's in the process. The source code for this project can be found on my GitHub.",
+            "section_image": "logo.jpg",
+            "section_button": {
+                "text": "GitHub",
+                "link": "https://github.com/wuguishifu/mujank"
+            }
+        }
+    ]
+}

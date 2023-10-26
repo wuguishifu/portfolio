@@ -7,9 +7,10 @@ type CarouselProps = {
     block: BlockCarousel;
     image_path: string;
     background: string;
+    hide_shadow?: boolean;
 }
 
-export default ({ block, image_path, background }: CarouselProps) => {
+export default ({ block, image_path, background, hide_shadow = false }: CarouselProps) => {
     const [index, setIndex] = useState(0);
 
     const next = () => setIndex(index => index + 1 === block.images.length ? 0 : index + 1);
@@ -24,7 +25,7 @@ export default ({ block, image_path, background }: CarouselProps) => {
                 <i className="ri-arrow-left-s-line px-8 text-[42px] text-white cursor-pointer transition-all duration-300 hover:opacity-50" onClick={last} />
                 <div className="flex flex-col items-center w-[75%]">
                     <img
-                        className="shadow rounded-lg"
+                        className={`rounded-lg ${hide_shadow ? '' : 'shadow'}`}
                         src={image_path + block.images[index]}
                         alt={block.images[index]}
                     />
