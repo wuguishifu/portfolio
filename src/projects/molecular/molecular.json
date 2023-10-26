@@ -1,0 +1,90 @@
+{
+    "title": "Molecular",
+    "meta": "molecular",
+    "image_path": "molecular/images/",
+    "background": "gradient-green",
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Molecular",
+            "section_text": "Molecular is a desktop application I built (2018-2021) in Java that allows users to create, visualize, and interact with molecules in 3D space. I built it to help chemistry students understand molecular structures during Covid-19 quarantine as a free substitute to the more conventionally expensive software. It is built in Java, and uses my 3D engine to render the molecules with accurate lighting and colors.",
+            "section_image": "benz-default.png"
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "C6H6-default.png",
+                "BF3-default.png",
+                "CO2-default.png",
+                "CH4-default.png",
+                "H2O-default.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "Pictured above are some of the default example molecules in Molecular."
+        },
+        {
+            "type": "text",
+            "section_text": "The main features of this application are the ability to move and create molecules. This allows the user to better interact with a molecule and better understand its structure. Molecular automatically compiles Van der Waals radii, covalent radii, and CPK color schemes which allows molecules to be accurately displayed. Currently, Molecular allows users to build molecules however they want, but in the future I would like to add functions that allow users to compile molecules into physically accurate structures. I will talk about this a little more later on."
+        },
+        {
+            "type": "text",
+            "section_text": "One of the main challenges I faced while making this project was needing to learn how to render objects in 3D. In college I took linear algebra and diff eq, but it was in a chemical engineering context. Because of this, it was a fun challenge to take my existing knowledge of matrices and apply it to a new context. I decided to use the LWJGL 3 library, but ended up implementing most of the math myself. This was a fun challenge, and I learned a lot about how 3D graphics works."
+        },
+        {
+            "type": "text",
+            "section_text": "The part of this project I'm most proud of is the system I used for 3D picking. Normally, this would be a matter of converting 2D mouse coordinates into a picking ray, and a vector would be extended down this ray until it intersects an object. However, due to the complex shapes of certain structures, this wasn't the most optimal solution. Instead, I employed a different strategy called \"color picking.\" To do this, whenever a user interacted with a molecules, I would render a ghost scene in a different frame buffer using aa unique color for each atom or bond. Then, without swapping buffers, I would ask OpenGL to tell me what color the mouse was over. Based on the color, I was able to reconstruct the uuid of the object the user was interacting with. I've added some images to better visualize the process below."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "benz-default.png",
+                "benz-color-buffer.png",
+                "benz-selection.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "The first image above is the benzaldehyde molecule as it's normally rendered on the scene. The second image shows the ghost color buffer. I've intentionally made the color difference more aggressive to better highlight what's going on. This is a temporary frame buffer, and isn't actually switched to the active buffer by OpenGL. By not switching buffers, OpenGL will still \"see\" the purple colors, but the screen will still be displaying the first image. Usually, this method is slower than ray picking, but it's more optimal for the interaction system I'm using, as it allows me to better encode information with the user's selection. The third image shows the molecule with the selected atom highlighted. This color picking method is also more robust, as it allows me to conditionally select atoms that are behind other atoms, or conditionally select atoms in a specific functional group."
+        },
+        {
+            "type": "text",
+            "section_text": "Pictured below is an example of one of the utilities that Molecular has. By selecting 3 atoms, the user can easily see the angle created by the atoms. The order of selection is important, and the second selected atom will make the vertex of the angle. Because of this, the user can potentially take any 3 atoms and fully define every angle of the triangle formed by them. Currently, this calculation is accurate for any bond type except one with lone pairs. In the future, I would like to update the calculations to account for the electron repulsive force caused by lone pairs."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "benz-angle.png",
+                "CH4-angle.png",
+                "CF6-angle.png",
+                "H2O-angle.png",
+                "BF3-angle.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "Another aspect of Molecular is the ability to do computation chemistry calculations. Computational chemistry uses highly specific and complex mathematical models and systems to predict certain aspects of molecules. I've implemented a few, such as Hartree-Fock (HF) energy convergence. The HF method is a way to approximate the wave function and energy of a quantum many-body system in a stationary state. Molecular uses this method to calculate the electron density, minimum energy, and total energy of binary systems. The following images are examples where I used the HF method to calculate these values for a hydrogen-hydrogen binary system. I initially implemented these functions using MATLAB, but then converted them to Java to easily integrate them in this project. Unfortunately, the Java versions are much slower due to MATLAB's JIT compiler and optimized math constructs, but MATLAB is unfortunately not free. In the future, I know that there are some Java-MATLAB integration libraries that I could use to speed up the calculations, and this would let me use the HF method for larger systems. One of the main goals of Molecular is to let users build a system, then use energy minimization methods (such as HF) to converge the system to the most accurate physical model."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "density.png",
+                "convergence.png",
+                "bond-length.png"
+            ]
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_image": "logo-cropped.png",
+            "section_title": "Tech Stack",
+            "section_text": "I built this project in Java with LWJGL 3 and GLSL, and developed it in Intellij. Some of the source code is publically available on GitHub.",
+            "section_button": {
+                "text": "View on GitHub",
+                "link": "https://github.com/wuguishifu/molecular-2.0"
+            }
+        }
+    ]
+}
