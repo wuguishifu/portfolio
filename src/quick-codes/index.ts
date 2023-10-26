@@ -1,8 +1,8 @@
 import { Page } from './page';
+import marchingCubes from './marching-cubes/marching-cubes.json';
 
 export default {
+    [marchingCubes.meta]: marchingCubes
 } as {
     [key: string]: Page;
 };
-
-export const getImage = (fileName: string) => new URL(fileName, import.meta.url).href;

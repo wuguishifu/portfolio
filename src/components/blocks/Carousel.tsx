@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import 'remixicon/fonts/remixicon.css';
-import { getImage } from "../../projects";
+import { getImage } from "../../getImage";
 import { BlockCarousel } from "../../projects/page";
 import useOnScreen from "../../hooks/useOnScreen";
 

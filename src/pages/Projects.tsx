@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet-async";
-import projects, { getImage } from "../projects";
+import projects from "../projects";
 import { BlockSplit, Page } from "../projects/page";
 import { Link } from "react-router-dom";
+import { getImage } from "../getImage";
 
 export default function Projects() {
     return (

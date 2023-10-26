@@ -1,24 +1,25 @@
 import { useRef } from "react";
-import { getImage } from "../../projects";
-import { BlockSplit } from "../../projects/page";
+import { getImage } from "../../getImage";
+import { BlockSplit, Page } from "../../projects/page";
 import useOnScreen from "../../hooks/useOnScreen";
 
 type SplitProps = {
     block: BlockSplit;
     image_path: string;
+    properties: Omit<Page, 'blocks'>
 }
 
-export default ({ block, image_path }: SplitProps) => {
+export default ({ properties, block, image_path }: SplitProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
     const [sectionVisible, hasAppeared] = useOnScreen(ref);
 
     return (
-        <div className={`flex flex-col items-center ${sectionVisible || hasAppeared ? 'animate-fade-in' : 'opacity-0'}`} ref={ref}>
+        <div className={`flex flex-col items-center ${sectionVisible || hasAppeared ? 'animate-fade-in' : 'opacity-0'} ${block.split_type === 'text-left' ? `${properties.background} py-8` : ''}`} ref={ref}>
             <div className={`w-4/5 max-w-screen-xl flex ${block.split_type === 'text-left' ? 'flex-row' : 'flex-row-reverse'} gap-16`}>
                 <div className="flex-1 gap-8 flex flex-col justify-center">
                     {block.section_title && <h1 className="text-5xl font-bold">{block.section_title}</h1>}
-                    <p className="text-lg text-grey">{block.section_text}</p>
+                    <p className={`text-lg ${block.split_type === 'text-left' ? 'text-white opacity-70' : 'text-grey'}`} dangerouslySetInnerHTML={{ __html: block.section_text }} />
                     {block.section_button &&
                         <div className="flex flex-row">
                             <a

@@ -6,6 +6,7 @@ import Error from './pages/Error';
 import QuickCodes from './pages/QuickCodes';
 import Project from './pages/Project';
 import Projects from './pages/Projects';
+import QuickCode from './pages/QuickCode';
 
 export default function App() {
     return (
@@ -14,7 +15,10 @@ export default function App() {
                 <Route index element={<Landing />} />
                 <Route path='about' element={<About />} />
                 <Route path='contact' element={<Contact />} />
-                <Route path='quick-codes' element={<QuickCodes />} />
+                <Route path='quick-codes'>
+                    <Route index element={<QuickCodes />} />
+                    <Route path=':quickCode' element={<QuickCode />} />
+                </Route>
                 <Route path='projects'>
                     <Route index element={<Projects />} />
                     <Route path=':project' element={<Project />} />

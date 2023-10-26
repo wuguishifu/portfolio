@@ -1,0 +1,78 @@
+{
+    "title": "Marching Cubes",
+    "meta": "marching-cubes",
+    "image_path": "quick-codes/marching-cubes/images/",
+    "background": "gradient-green",
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Marching Cubes",
+            "section_text": "The marching cubes algorithm is a method for extracting a polygonal mesh from a scalar field. It is used in medical imaging, geology, and other fields to create 3D models of complex objects. The algorithm is based on the idea of dividing a 3D space into a grid of cubes, and then determining the shape of the surface within each cube.",
+            "section_image": "torus.png"
+        },
+        {
+            "type": "text",
+            "section_text": "In order to product a 3D mesh, the marching cubes algorithm draws a series of triangles depending on the value of the surface at a given position. This is done in a series of steps, where the evaluation of the surface at the vertices of certain cubes determines what triangles to draw. By iterating over the entire grid of cubes, or \"marching the cubes,\" the entire contour surface can be drawn. The following images have been generated using my 3D engine. You can find more information about that in my projects section."
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "The first step of the algorithm is to define a 3d grid of cubes. Here I have defined a grid of cubes. The number of cubes in the grid is determined by the resolution of the grid, which is the number of cubes along each axis. The resolution of the grid is determined by the number of vertices along each axis of the scalar field. For example, if the scalar field has a resolution of 10x10x10, then the marching cubes grid will have a resolution of 9x9x9, and will contain 8x8x8 cubes.",
+            "section_image": "grid.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "For each cube, the algorithm determines the value of the surface at each of the 8 vertices. The value of the surface is determined by the scalar field. If the value of the surface is greater than a certain threshold, then the vertex is considered to be inside the surface. If the value of the surface is less than the threshold, then the vertex is considered to be outside the surface. The threshold is usually set to 0, so that the surface is defined as the set of points where the scalar field is equal to 0.<br><br>In this image, I have colored the vertices that are inside the surface blue, and I've drawn a red outline of where the surface intersects with the cube.",
+            "section_image": "intersection.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "The next step is to determine which triangles to draw. There are 256 possible combinations of inside and outside vertices, but only 15 unique cases. The algorithm uses a lookup table to determine which case a cube falls into, and then draws the triangles accordingly.",
+            "section_image": "lookup-table.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "The final step is to draw the triangles. The algorithm draws the triangles by interpolating the position of the surface along the edges of the cube. Normally, the position of the surface along each edge would be determined by linearly interpolating between the two vertices of the edge. The algorithm then draws the triangles by connecting the interpolated positions of the surface along the edges of the cube.<br><br>However, for this project, I wanted to emphasize the structure of the marching cubes algorithm, so I decided to draw the triangles by connecting the vertices of the cube. This makes it easier to see how the triangles are drawn, and how the triangles are connected to each other.",
+            "section_image": "face.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "By increasing the resolution of the grid, the surface becomes more detailed. This is because the surface is defined by the vertices of the cubes, and the more vertices there are, the more detailed the surface will be. For example, a sphere has been rendered using grids with increasing resolutions of 2x.",
+            "section_image": "cubes-iteration.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "While a sphere is easy to create programmatically, the marching cubes algorithm is very helpful for situations involving irregular shapes that can't be easily defined. A real world example of this is medical imaging, where the marching cubes algorithm is used to create 3D models of organs and other structures in the body. While I don't have any medical images to work with, I have created a few examples of irregular shapes using the marching cubes algorithm. Shown to the right is a graph of sin<sup>2</sup>(x)+sin<sup>2</sup>(z)&lt;y<sup>2</sup>.",
+            "section_image": "graph.png"
+        },
+        {
+            "type": "text",
+            "section_text": "In the future, I would like to optimize the algorithm I wrote and implement it natively in my 3D engine. Currently, I'm iterating over every cube in the scene, which is very inefficient. This can be seen with higher resolutions, where the amount of time it takes to render the scene increases exponentially. To fix this, I would like to modify the implementation to recursively split the scene into groups of cubes. I would then check each group of cubes to see if the surface intersects, and if it does I would continue to recursively split the group of cubes until I reach a certain resolution. This would allow me to render the scene much faster, and would allow me to render scenes with much higher resolutions. While I work on that, check out some of the cool shapes I've created using the marching cubes algorithm."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "torus.png",
+                "pacman.png",
+                "perlin.png"
+            ]
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_image": "cubes-4.png",
+            "section_title": "Tech Stack",
+            "section_text": "I built this quick code in Java over my 3D engine with LWJGL 3 and GLSL. Source code for this quick code is available on my GitHub",
+            "section_button": {
+                "text": "View on GitHub",
+                "link": "https://github.com/wuguishifu/Physics/tree/master/src/com/bramerlabs/math/marching_cubes"
+            }
+        }
+    ]
+}
