@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { BlockSplit, Page } from "../quick-codes/page";
 import { Link } from "react-router-dom";
-import { getImage } from "../getImage";
 import codes from "../quick-codes";
+import { BlockSplit, Page } from "../quick-codes/page";
 
 export default function QuickCodes() {
     return (
@@ -32,7 +31,7 @@ function CodeRow({ project, reverse, style }: { project: Page; reverse: boolean;
             <div className="flex-1">
                 <img
                     className="shadow rounded-lg w-full aspect-auto"
-                    src={getImage(project.image_path + block.section_image)}
+                    src={project.image_path + block.section_image}
                     alt={block.section_image}
                 />
             </div>

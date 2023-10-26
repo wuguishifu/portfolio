@@ -1,0 +1,29 @@
+{
+    "title": "Planets",
+    "meta": "planets",
+    "image_path": "/quick-codes/planets/",
+    "background": "gradient-blue",
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Planets",
+            "section_text": "Planets is a Java based 3D program that procedurally generates low poly planets. It uses the OpenGL library LWJGL to render the planets, and is capable of generating different types of planets with different types of terrain. It uses Perlin Noise to procedurally generate them based on a seed.",
+            "section_image": "99999.png"
+        },
+        {
+            "type": "text",
+            "section_text": "The main reason I was motivated to create this project is that I was interested in learning how pseudo-random noise generation works. To create my planetes, I used 3 different noise generation. For the default planet shape, I experimented with a few different types of noise and control variables, the most notorious being Perlin Noise, first developed and published by Ken Perlin."
+        },
+        {
+            "type": "text",
+            "section_text": "The main difficulty with this type of noise, however, is that I build my spheres using subdivided icosahedrons (icospheres). In comparison to \"standard\" UV mesh spheres, icospheres are built by subdividing the triangular faces of an icosahedron recursively into 4 new triangles. The benefit of icospheres is that all the faces of the resultant sphere are equally sized. However, the drawbacks are that they are significantly more difficult to apply textures to. Unlike a UV sphere, which is specifically designed by warping squares and triangles from a 2d surface, icospheres don't have the ability to be (easily) seamlessly textured."
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "Here is an example of a Perlin Noise-generated height map. Ideally, when making the terrain maps on the planets, I would plug in each position on the planet's surface's (x, y) coordinate into the noise function, and use the output as the height of the terrain at that point. However, because of the way icospheres are built, the (x, y) coordinates of the vertices are not evenly spaced out, and the noise function would not be able to generate a smooth height map. To solve this problem, I used a different noise function, called Simplex Noise, which is a modified version of Perlin Noise that is able to generate smooth noise on non-regular grids.",
+            "section_image": "noise.png"
+        }
+    ]
+}

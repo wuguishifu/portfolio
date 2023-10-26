@@ -9,6 +9,8 @@ import Projects from './pages/Projects';
 import QuickCode from './pages/QuickCode';
 
 export default function App() {
+    import.meta.glob('/assets/*/*/*/*/*/*/*', { eager: true })
+
     return (
         <Routes>
             <Route path="/" element={<Wrapper />}>

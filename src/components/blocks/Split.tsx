@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import { getImage } from "../../getImage";
-import { BlockSplit, Page } from "../../projects/page";
 import useOnScreen from "../../hooks/useOnScreen";
+import { BlockSplit, Page } from "../../projects/page";
 
 type SplitProps = {
     block: BlockSplit;
@@ -34,7 +33,7 @@ export default ({ properties, block, image_path }: SplitProps) => {
                 <div className="flex-1">
                     <img
                         className="shadow rounded-lg"
-                        src={getImage(image_path + block.section_image)}
+                        src={image_path + block.section_image}
                         alt={block.section_image}
                     />
                 </div>

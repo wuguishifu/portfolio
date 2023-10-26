@@ -1,1 +1,0 @@
-export const getImage = (filename: string) => new URL(filename, import.meta.url).href;

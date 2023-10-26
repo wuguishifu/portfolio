@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import projects from "../projects";
 import { BlockSplit, Page } from "../projects/page";
-import { Link } from "react-router-dom";
-import { getImage } from "../getImage";
 
 export default function Projects() {
     return (
@@ -32,7 +31,7 @@ function ProjectRow({ project, reverse, style }: { project: Page; reverse: boole
             <div className="flex-1">
                 <img
                     className="shadow rounded-lg w-full aspect-auto"
-                    src={getImage(project.image_path + block.section_image)}
+                    src={project.image_path + block.section_image}
                     alt={block.section_image}
                 />
             </div>

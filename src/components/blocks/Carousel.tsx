@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 import 'remixicon/fonts/remixicon.css';
-import { getImage } from "../../getImage";
-import { BlockCarousel } from "../../projects/page";
 import useOnScreen from "../../hooks/useOnScreen";
+import { BlockCarousel } from "../../projects/page";
 
 type CarouselProps = {
     block: BlockCarousel;
@@ -26,7 +25,7 @@ export default ({ block, image_path, background }: CarouselProps) => {
                 <div className="flex flex-col items-center w-[75%]">
                     <img
                         className="shadow rounded-lg"
-                        src={getImage(image_path + block.images[index])}
+                        src={image_path + block.images[index]}
                         alt={block.images[index]}
                     />
                     <Bullets index={index} num={block.images.length} className="mt-8" onClick={setIndex} />

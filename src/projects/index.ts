@@ -1,5 +1,6 @@
-import molecular from './molecular/molecular.json';
 import { Page } from './page';
+
+import molecular from './pages/molecular.json';
 
 export default {
     [molecular.meta]: molecular
