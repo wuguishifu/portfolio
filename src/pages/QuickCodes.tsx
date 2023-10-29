@@ -23,7 +23,7 @@ export default function QuickCodes() {
 function CodeRow({ project, reverse, style }: { project: Page; reverse: boolean; style?: React.CSSProperties }) {
     const block = project.blocks[0] as BlockSplit;
     return (
-        <Link className={`flex ${reverse ? 'flex-row' : 'flex-row-reverse'} gap-8 p-8 rounded-xl ${project.background} h-[400px] items-center animate-fade-in fill-mode-both w-full`} to={`/projects/${project.meta}`} style={style}>
+        <Link className={`flex ${reverse ? 'flex-row' : 'flex-row-reverse'} gap-8 p-8 rounded-xl ${project.background} h-[400px] items-center animate-fade-in fill-mode-both w-full`} to={`/quick-codes/${project.meta}`} style={style}>
             <div className="gap-8 flex flex-col justify-center flex-1">
                 {project.title && <h1 className="text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></h1>}
                 <p className="text-lg text-white opacity-70">{block.section_text}</p>

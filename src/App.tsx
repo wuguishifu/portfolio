@@ -7,6 +7,7 @@ import QuickCodes from './pages/QuickCodes';
 import Project from './pages/Project';
 import Projects from './pages/Projects';
 import QuickCode from './pages/QuickCode';
+import PlanetExample from './pages/planets/PlanetExample';
 
 export default function App() {
     import.meta.glob('/assets/*/*/*/*/*/*/*', { eager: true })
@@ -25,6 +26,7 @@ export default function App() {
                     <Route index element={<Projects />} />
                     <Route path=':project' element={<Project />} />
                 </Route>
+                <Route path='planets' element={<PlanetExample />} />
                 <Route path='*' element={<Error />} />
             </Route>
         </Routes>
