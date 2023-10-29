@@ -48,10 +48,12 @@
             "section_title": "Tech Stack",
             "section_text": "The majority of Mujank was built in Python using Discord's bot API and the asyncio package. The website counterpart was built in vanilla HTML, CSS, and JS, and was served using a Node.js backend. The entire project was hosted on a Raspberry Pi 4, which was a fun challenge to get working. I had to set up a reverse proxy using NGINX to route traffic to the correct ports, and I had to set up a dynamic DNS service to allow people to connect to the server using a domain name.<br><br>Overall, it was a fun project to work on, and I learned a lot about Python, Node.js, and Raspberry Pi's in the process. The source code for this project can be found on my GitHub.",
             "section_image": "logo.jpg",
-            "section_button": {
-                "text": "GitHub",
-                "link": "https://github.com/wuguishifu/mujank"
-            }
+            "section_buttons": [
+                {
+                    "text": "GitHub",
+                    "link": "https://github.com/wuguishifu/mujank"
+                }
+            ]
         }
     ]
 }

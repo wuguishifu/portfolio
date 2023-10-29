@@ -16,10 +16,10 @@ export type BlockSplit = {
     section_text: string;
     section_image: string;
     force_show_shadow?: boolean;
-    section_button?: {
+    section_buttons?: {
         text: string;
         link: string;
-    }
+    }[]
 }
 
 export type BlockText = {

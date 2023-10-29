@@ -81,10 +81,12 @@
             "section_image": "logo-cropped.png",
             "section_title": "Tech Stack",
             "section_text": "I built this project in Java with LWJGL 3 and GLSL, and developed it in Intellij. Some of the source code is publically available on GitHub.",
-            "section_button": {
-                "text": "View on GitHub",
-                "link": "https://github.com/wuguishifu/molecular-2.0"
-            }
+            "section_buttons": [
+                {
+                    "text": "View on GitHub",
+                    "link": "https://github.com/wuguishifu/molecular-2.0"
+                }
+            ]
         }
     ]
 }

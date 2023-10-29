@@ -69,10 +69,12 @@
             "section_image": "cubes-4.png",
             "section_title": "Tech Stack",
             "section_text": "I built this quick code in Java over my 3D engine with LWJGL 3 and GLSL. Source code for this quick code is available on my GitHub",
-            "section_button": {
-                "text": "View on GitHub",
-                "link": "https://github.com/wuguishifu/Physics/tree/master/src/com/bramerlabs/math/marching_cubes"
-            }
+            "section_buttons": [
+                {
+                    "text": "View on GitHub",
+                    "link": "https://github.com/wuguishifu/Physics/tree/master/src/com/bramerlabs/math/marching_cubes"
+                }
+            ]
         }
     ]
 }

@@ -100,10 +100,12 @@
             "section_title": "Tech Stack",
             "section_text": "I built this periodic table using vanilla HTML, CSS, and JS. Normally, I would rather use React for a webapp like this, but there were very strict requirements on how it could be hosted that made it more difficult to do this. In the future, I will be rebuilding this in react and hosting it on a separate domain to make it easier to maintain and host.<br><br>You can view this table on the ChemTalk website by clicking the button below.",
             "section_image": "logo.png",
-            "section_button": {
-                "text": "ChemTalk Website",
-                "link": "https://chemistrytalk.org/interactive-periodic-table"
-            }
+            "section_buttons": [
+                {
+                    "text": "ChemTalk Website",
+                    "link": "https://chemistrytalk.org/interactive-periodic-table"
+                }
+            ]
         }
     ]
 }
