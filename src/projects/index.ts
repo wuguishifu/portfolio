@@ -8,8 +8,8 @@ import engine3d from './pages/engine3d.json';
 export default {
     [molecular.meta]: molecular,
     [ptable.meta]: ptable,
+    [mujank.meta]: mujank,
     [engine3d.meta]: engine3d,
-    [mujank.meta]: mujank
 } as {
     [key: string]: Page;
 };
