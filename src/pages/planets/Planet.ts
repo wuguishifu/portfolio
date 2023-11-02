@@ -25,13 +25,13 @@ export class Planet {
         const color2 = new Vector3(Math.random() * 255, Math.random() * 255, Math.random() * 255);
         const color3 = new Vector3(Math.random() * 255, Math.random() * 255, Math.random() * 255);
 
-        const spareDistance = 100.5 * Math.random();
-        const spareOffset = 10.0 * Math.random();
-        const amplitude = 2.3 * Math.random();
+        const spareDistance = 5.0 * Math.random();
+        const spareOffset = 2.0 * Math.random();
+        const amplitude = 2.0 * Math.random();
         const radius = 2.0;
         this.radius = radius;
 
-        const triangles = this.generateTriangles(radius); // line 77
+        const triangles = this.generateTriangles(radius);
         const cf = new ColorFaderC3(color1, color2, color3, 0.5);
         const noise = new ImprovedNoise();
 

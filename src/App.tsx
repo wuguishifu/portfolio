@@ -26,6 +26,7 @@ export default function App() {
                     <Route index element={<Projects />} />
                     <Route path=':project' element={<Project />} />
                 </Route>
+                <Route path='planets/:seed' element={<PlanetExample />} />
                 <Route path='planets' element={<PlanetExample />} />
                 <Route path='*' element={<Error />} />
             </Route>

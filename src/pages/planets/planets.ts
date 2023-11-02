@@ -15,6 +15,12 @@ declare global {
     }
 }
 
+let showAtmosphere = true;
+
+export function toggleAtmosphere() {
+    showAtmosphere = !showAtmosphere;
+}
+
 export function start(seed: string) {
     canvas ||= document.getElementById("canvas") as HTMLCanvasElement;
     if (!canvas) return;
@@ -140,23 +146,25 @@ function run() {
     });
 
     // render atmosphere
-    gl.depthMask(false);
-    gl.disable(gl.CULL_FACE);
-    atmospheres.forEach(atmosphere => {
-        renderObject({
-            gl: gl!,
-            info: programInfo,
-            object: {
-                mesh: atmosphere.mesh,
-                model: {
-                    position: atmosphere.position,
-                    rotation: atmosphere.rotation,
-                    scale: atmosphere.scale
-                }
-            },
-            camera
+    if (showAtmosphere) {
+        gl.depthMask(false);
+        gl.disable(gl.CULL_FACE);
+        atmospheres.forEach(atmosphere => {
+            renderObject({
+                gl: gl!,
+                info: programInfo,
+                object: {
+                    mesh: atmosphere.mesh,
+                    model: {
+                        position: atmosphere.position,
+                        rotation: atmosphere.rotation,
+                        scale: atmosphere.scale
+                    }
+                },
+                camera
+            });
         });
-    });
+    }
 
     if (!running) return;
     window.requestAnimationFrame(run);

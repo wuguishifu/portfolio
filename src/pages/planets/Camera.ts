@@ -4,7 +4,7 @@ import { Vector3 } from "./math";
 const defaults = {
     focus: new Vector3(0, 0, 0),
     up: new Vector3(0, 1, 0),
-    distance: 10.0,
+    distance: 15.0,
     verticalAngle: -40,
     horizontalAngle: -45,
 };

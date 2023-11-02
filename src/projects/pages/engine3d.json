@@ -1,0 +1,77 @@
+{
+    "title": "Engine3D",
+    "meta": "engine3d",
+    "image_path": "/projects/engine3d/",
+    "background": "gradient-red",
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Engine3D",
+            "section_text": "Engine3D is a Java based 3D engine I built (2018-2019) using OpenGL and GLSL. It has standard 3D engine functions such as creating objects, materials, and optimized meshes, as well as functions such as loading STL and OBJ object files and textures. I built this engine to learn more about 3D graphics and OpenGL, and to use in future projects such as my molecule simulating application, Molecular, and various quick codes that required 3D rendering.",
+            "section_image": "main-pink-cube.png"
+        },
+        {
+            "type": "text",
+            "section_text": "This engine features realistic lighting using a technique called Phong Shading. To perform this, each defined vertex in the object mesh includes a position vector and a normal vector. The position vector describes where that vertex is in space, and the normal vector describes the direction that the vertex is facing. The engine then uses these vectors to calculate the lighting of each vertex, and then interpolates the lighting across the face of the object. It does this by calculating the ambient, diffuse, and specular lighting (shown in the first 3 images below respectively) of each vertex, and then interpolating these values across the face of the object. This creates a realistic lighting effect (the 4th image below)."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "ambient.png",
+                "diffuse.png",
+                "specular.png",
+                "combine.png"
+            ]
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "While this works great for simple objects, it becomes increasingly difficult the more detail the objects have. For example, these cubes are textured to look like a brick wall and a wooden container, but if the lighting was interpolated over the entire surface, it would look very unrealistic.<br><br>To fix this, we can use extra images called texture maps to tell the engine where to apply the lighting. Shown below are the textures for the wall including the base map, the normal map, and the specular map. Instead of each vertex \"owning\" its own normal vector, the shader applies a normal map based on the supplied texture image to the entire object. This allows for the more realistic lighting shown to the left.",
+            "section_image": "wall-default.png"
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "wall-base.png",
+                "wall-normal.png",
+                "wall-specular.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "In these textures, the base map has the color data for each vertex, the normal map has the normal data for each vertex, and the specular map has the reflective data for each vertex. In the normal map, a position (x, y, z) is represented by a color (r, g, b). The values of (r, b, g) are in the range [0, 255] for a base 16 color, which is then interpolated to the (x, y, z). For example, an r=0 would correspond to x=-1, r=127 x=0, r=255 x=1. By doing this, we can encode normal data very efficiently into a texture image.<br><br>The specular map is simpler, as it takes an alpha value from 0 to 1 and interpolates it to the specular value. This allows us to have a very detailed texture without having to store a lot of data in the mesh itself. This also makes it much more efficient to render very complex objects, like the following birch tree. This object has over 100,000 vertices, but it still runs at 60 FPS because the lighting is done in the shader, and the data is being very efficiently stored in the texture instead of the object."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "birch-default.png",
+                "birch-leaves.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "The following images are the color, normal, and specular texture maps for the birch tree above."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "birch-base.png",
+                "birch-normal.png",
+                "birch-specular.png"
+            ]
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "Lastly, this engine has the ability to define custom shaders for any use cases. For example, pictured on the left is a dino using a cel shader.<br><br>You can see the latest iteration of this project in my GitHub repository below.",
+            "section_image": "dino-cel.png",
+            "section_buttons": [
+                {
+                    "text": "View on GitHub",
+                    "link": "https://github.com/wuguishifu/Engine3D"
+                }
+            ]
+        }
+    ]
+}
