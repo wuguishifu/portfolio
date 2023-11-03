@@ -31,7 +31,7 @@ function BlogRow({ blog, style, reverse }: { blog: any, style?: React.CSSPropert
                 alt={blog.image}
             />
             <div className="flex-col gap-4 flex">
-                {blog.title && <div className="text-4xl font-bold text-black">{blog.title} <i className="ri-external-link-line" /></div>}
+                {blog.title && <div className="text-4xl font-bold text-black hover:text-blue">{blog.title} <i className="ri-external-link-line" /></div>}
                 <div className="text-lg text-black opacity-70">{blog.blurb}</div>
             </div>
         </Link>
