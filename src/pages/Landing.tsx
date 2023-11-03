@@ -3,8 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Chibi from '../assets/chibi/chibi-reflected.png';
 import { Helmet } from "react-helmet-async";
 import projects from "../projects";
+import quickCodes from "../quick-codes";
+import { blogs } from "../blog";
 
-const paths = Object.values(projects).map(project => project.meta);
+const projectPaths = Object.values(projects).map(project => `projects/${project.meta}`);
+const qcPaths = Object.values(quickCodes).map(qc => `quick-codes/${qc.meta}`);
+const blogPaths = Object.values(blogs).map(blog => `blog/${blog.slug}`);
+
+const paths = [...projectPaths, ...qcPaths, ...blogPaths];
 
 export default function Landing() {
 
