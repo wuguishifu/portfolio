@@ -16,8 +16,14 @@ export function Blog() {
             <Helmet>
                 <title>Bo | {blogs[blog].title}</title>
             </Helmet>
-            <div className="max-w-screen-xl w-4/5">
-                <Markdown remarkPlugins={[rehypeHighlight, remarkGfm, supersub]}>{blogs[blog].data}</Markdown>
+            <div className="max-w-screen-lg w-4/5">
+                <Markdown
+                    remarkPlugins={[rehypeHighlight, remarkGfm, supersub]}
+                    components={{
+                        img: ({ node, ...props }) => <div className="w-full flex flex-row justify-center"><img {...props} className="w-2/3" /></div>,
+                        table: ({ node, ...props }) => <div className="w-full flex flex-row justify-center"><table {...props} className="w-1/2" /></div>,
+                    }}
+                >{blogs[blog].data}</Markdown>
             </div>
         </div>
     );

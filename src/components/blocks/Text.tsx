@@ -13,7 +13,7 @@ export default ({ block }: TextProps) => {
 
     return (
         <div className={`flex flex-col items-center ${sectionVisible || hasAppeared ? 'animate-fade-in' : 'opacity-0'}`} ref={ref}>
-            <div className="w-4/5 max-w-screen-xl flex flex-row">
+            <div className="w-4/5 max-w-screen-lg flex flex-row">
                 <div className="text-lg text-grey" dangerouslySetInnerHTML={{ __html: block.section_text }} />
             </div>
         </div>
