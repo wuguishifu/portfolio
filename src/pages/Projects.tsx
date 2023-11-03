@@ -25,8 +25,8 @@ function ProjectRow({ project, reverse, style }: { project: Page; reverse: boole
     return (
         <Link className={`flex ${reverse ? 'flex-row' : 'flex-row-reverse'} gap-8 p-8 rounded-xl ${project.background} h-[400px] items-center animate-fade-in fill-mode-both w-full`} to={`/projects/${project.meta}`} style={style}>
             <div className="gap-8 flex flex-col justify-center flex-1">
-                {project.title && <h1 className="text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></h1>}
-                <p className="text-lg text-white opacity-70">{block.section_text}</p>
+                {project.title && <div className="text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></div>}
+                <div className="text-lg text-white opacity-70">{block.section_text}</div>
             </div>
             <img
                 className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg h-full aspect-auto`}

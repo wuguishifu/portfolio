@@ -16,6 +16,50 @@
     -webkit-text-size-adjust: 100%;
 }
 
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    color: #888888;
+}
+
+th,
+td {
+    border: 1.5px solid black;
+    padding: 0 8px;
+}
+
+table {
+    margin: 8px 0;
+    border-collapse: collapse;
+}
+
+a {
+    color: #0064A4;
+}
+
 html {
     scroll-behavior: auto;
 }

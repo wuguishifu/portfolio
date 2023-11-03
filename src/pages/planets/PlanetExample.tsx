@@ -35,8 +35,8 @@ export default function PlanetExample() {
                 <div className='w-4/5 max-w-screen-xl flex flex-row gap-16'>
                     <canvas id="canvas" width={1920} height={1080} className='w-1/2 bg-black' style={{ aspectRatio: 1 }} />
                     <div className='flex-1 gap-8 flex flex-col justify-center'>
-                        <h1 className='text-5xl font-bold animate-fade-in fill-mode-both'>Planet Example</h1>
-                        <p className='text-lg text-grey animate-fade-in fill-mode-both animation-delay-200'>On this page, I have ported my Java + OpenGL code to TypeScript + WebGL. The camera is an arcball, meaning you can rotate the entire universe by dragging with your cursor, and you can zoom in and out with your scroll bar. The seed can be any string, and a specific seed will always generate the same planet and atmosphere.</p>
+                        <div className='text-5xl font-bold animate-fade-in fill-mode-both'>Planet Example</div>
+                        <div className='text-lg text-grey animate-fade-in fill-mode-both animation-delay-200'>On this page, I have ported my Java + OpenGL code to TypeScript + WebGL. The camera is an arcball, meaning you can rotate the entire universe by dragging with your cursor, and you can zoom in and out with your scroll bar. The seed can be any string, and a specific seed will always generate the same planet and atmosphere.</div>
                         <div className='flex flex-row'>
                             <div className='flex flex-col gap-4'>
                                 <button

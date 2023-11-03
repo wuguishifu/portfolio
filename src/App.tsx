@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import QuickCode from './pages/QuickCode';
 import PlanetExample from './pages/planets/PlanetExample';
 import { useEffect } from 'react';
+import { Blogs, Blog } from './blog';
 
 export default function App() {
     import.meta.glob('/assets/*/*/*/*/*/*/*', { eager: true })
@@ -32,6 +33,10 @@ export default function App() {
                     <Route index element={<Projects />} />
                     <Route path=':project' element={<Project />} />
                 </Route>
+                <Route path='blog'>
+                    <Route index element={<Blogs />} />
+                    <Route path=':blog' element={<Blog />} />
+                </Route>
                 <Route path='planets/:seed' element={<PlanetExample />} />
                 <Route path='planets' element={<PlanetExample />} />
                 <Route path='*' element={<Error />} />
@@ -52,6 +57,7 @@ function Wrapper() {
                     <Link to={'/about'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">About</Link>
                     <Link to={'/projects'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Projects</Link>
                     <Link to={'/quick-codes'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Quick Codes</Link>
+                    <Link to={'/blog'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Blog</Link>
                 </div>
             </div>
             <Outlet />

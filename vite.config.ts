@@ -9,5 +9,8 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCase'
     }
+  },
+  optimizeDeps: {
+    exclude: ['remark-gfm']
   }
 })
