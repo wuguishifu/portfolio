@@ -28,11 +28,11 @@ function CodeRow({ project, reverse, style }: { project: Page; reverse: boolean;
                 {project.title && <h1 className="text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></h1>}
                 <p className="text-lg text-white opacity-70">{block.section_text}</p>
             </div>
-            <img
+            {block.section_image && <img
                 className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg h-full aspect-auto`}
                 src={project.image_path + block.section_image}
                 alt={block.section_image}
-            />
+            />}
         </Link>
     );
 }

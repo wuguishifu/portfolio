@@ -11,7 +11,7 @@ stdin.setEncoding('utf-8');
 const keypress = async () => new Promise(resolve => process.stdin.once('data', data => resolve(data)));
 
 const { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_BUCKET_NAME } = process.env;
-const s3 = new S3Client({ AWS_REGION, credentials: { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY } });
+const s3 = new S3Client({ AWS_REGION, credentials: { accessKeyId: AWS_ACCESS_KEY_ID, secretAccessKey: AWS_SECRET_ACCESS_KEY } });
 
 (async () => {
     // wait for the confirmation
@@ -25,10 +25,10 @@ const s3 = new S3Client({ AWS_REGION, credentials: { AWS_ACCESS_KEY_ID, AWS_SECR
     // recursively walk the dist folder and mark all the files for upload
     const files = [];
     walkSync('./dist', (filePath) => {
-        let bucketPath = filePath.repliace('./dist', '');
+        let bucketPath = filePath.replace('./dist', '');
         if (bucketPath.startsWith('/')) bucketPath = bucketPath.substring(1);
+        files.push({ filePath, bucketPath });
     });
-    files.push({ filePath, bucketPath });
 
     // upload the files to aws s3
     await Promise.all(files.map(({ filePath, bucketPath }) =>

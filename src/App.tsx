@@ -52,7 +52,6 @@ function Wrapper() {
                     <Link to={'/about'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">About</Link>
                     <Link to={'/projects'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Projects</Link>
                     <Link to={'/quick-codes'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Quick Codes</Link>
-                    <Link to={'/contact'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Contact</Link>
                 </div>
             </div>
             <Outlet />

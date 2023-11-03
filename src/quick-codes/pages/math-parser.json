@@ -1,0 +1,46 @@
+{
+    "title": "Math Parser",
+    "meta": "math-parser",
+    "image_path": "/quick-codes/math-parser/",
+    "background": "gradient-red",
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Math Parser",
+            "section_text": "I built this math parser to use in a future calculator project. I wanted to create a system that could solve equations in js without using the eval() function. The eval() function is usually good for this use case, but is not secure and can be exploited by malicious users. This parser is not yet complete, but it can solve simple equations and is a good start to a more complex system.",
+            "section_image": "image.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "The first step of this project were to convert an equation input into reverse polish notation (RPN). For example, \"(2 + 2) * 4\" would become \"2 2 + 4 *\". To do this, I used the shunting yard algorithm. This algorithm uses a stack to convert an infix expression to postfix. The basic algorithm is as follows, but gets more complicated with the addition of paranthetical statements: <div style=\"padding: 0 1.2em\"><ol><li>1. push first number to the output queue</li><li>2. push operator to the operator stack</li><li>3. push second number to output queue</li><li>4. pop all operators off the stack and push them to the output queue</li></ol></div>After running through this algorithm, the output queue is the RPN expression.",
+            "section_image": "parser.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "The next step is to actually evaluate the RPN expression. To do this, I iterate over each token in the RPN array. If the token is a number, I parse the number and add it to the operation stack. If the token is an operator, I pop the last two numbers off the stack, perform the operation, and push the result back onto the stack. The result is the final number on the stack.",
+            "section_image": "evaluator.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_text": "One of the specific features I wanted to implement was the ability to create custom operators. To do this, I created a dictionary of operators and their functions. When the parser encounters an operator, it checks the dictionary for the operator and runs the function if it exists. This allows for the creation of custom operators that don't exist in the standard math library such as the nth root function.",
+            "section_image": "operators.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Tech Stack",
+            "section_text": "I built this quick code in pure JavaScript. You can see the source code on my GitHub page below.",
+            "section_image": "main.png",
+            "section_buttons": [
+                {
+                    "text": "View on GitHub",
+                    "link": "https://github.com/wuguishifu/math-parser"
+                }
+            ]
+        }
+    ]
+}
