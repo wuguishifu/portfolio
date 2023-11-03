@@ -25,7 +25,7 @@ The second caveat is lookup or rainbow tables. A lookup/rainbow table is a tabul
 
 ## Level 3: Salt
 
-Before computing the hash of a user's password, a little "salt" can be added to it. For example, the password "qwerty123" might become "qwerty123TLGKlAr5bZCStJZHut9fIOoDg6l4wtgp" (a 128 bit salt). Then, the hash can be computed like normal, and the salt can be saved with the hash. By doing this, dictionary attacks become significantly more innefficient, because pre-computed hashes cannot be used. This also has the added benefit of decoupling users. For example, if Alice and Bob both have the password "querty123", the random salt ensures that once Alice's password is determined that Bob's is not also determined.
+Before computing the hash of a user's password, a little "salt" can be added to it. For example, the password "qwerty123" might become "qwerty123TLGKlAr5bZCStJZHut9fIOoDg6l4wtgp" (a 128 bit salt). Then, the hash can be computed like normal, and the salt can be saved with the hash. By doing this, dictionary attacks become significantly more inefficient, because pre-computed hashes cannot be used. This also has the added benefit of decoupling users. For example, if Alice and Bob both have the password "querty123", the random salt ensures that once Alice's password is determined that Bob's is not also determined.
 
 ![salt function](/blog/securePasswords/salt.png)
 
