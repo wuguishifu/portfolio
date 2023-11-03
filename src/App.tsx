@@ -14,10 +14,10 @@ import { Blogs, Blog } from './blog';
 export default function App() {
     import.meta.glob('/assets/*/*/*/*/*/*/*', { eager: true })
 
-    // const location = useLocation();
-    // useEffect(() => {
-    //     document.querySelector('body')?.scrollTo(0, 0);
-    // }, [location]);
+    const location = useLocation();
+    useEffect(() => {
+        document.querySelector('body')?.scrollTo(0, 0);
+    }, [location]);
 
     return (
         <Routes>
