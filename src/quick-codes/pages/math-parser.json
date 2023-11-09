@@ -14,7 +14,7 @@
         {
             "type": "split",
             "split_type": "text-left",
-            "section_text": "The first step of this project were to convert an equation input into reverse polish notation (RPN). For example, \"(2 + 2) * 4\" would become \"2 2 + 4 *\". To do this, I used the shunting yard algorithm. This algorithm uses a stack to convert an infix expression to postfix. The basic algorithm is as follows, but gets more complicated with the addition of paranthetical statements: <div style=\"padding: 0 1.2em\"><ol><li>1. push first number to the output queue</li><li>2. push operator to the operator stack</li><li>3. push second number to output queue</li><li>4. pop all operators off the stack and push them to the output queue</li></ol></div>After running through this algorithm, the output queue is the RPN expression.",
+            "section_text": "The first step of this project were to convert an equation input into reverse polish notation (RPN). For example, \"(2 + 2) * 4\" would become \"2 2 + 4 *\". To do this, I used the shunting yard algorithm. This algorithm uses a stack to convert an infix expression to postfix. The basic algorithm is as follows, but gets more complicated with the addition of paranthetical statements: <div style=\"padding: 0 1.2em\"><ol><li>push first number to the output queue</li><li>push operator to the operator stack</li><li>push second number to output queue</li><li>pop all operators off the stack and push them to the output queue</li></ol></div>After running through this algorithm, the output queue is the RPN expression.",
             "section_image": "parser.png"
         },
         {

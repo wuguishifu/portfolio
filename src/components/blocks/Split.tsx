@@ -15,14 +15,14 @@ export default ({ properties, block, image_path }: SplitProps) => {
 
     return (
         <div className={`flex flex-col items-center ${sectionVisible || hasAppeared ? 'animate-fade-in' : 'opacity-0'} ${block.split_type === 'text-left' ? `${properties.background} py-8` : ''}`} ref={ref}>
-            <div className={`w-4/5 max-w-screen-xl flex ${block.split_type === 'text-left' ? 'flex-row' : 'flex-row-reverse'} gap-16`}>
+            <div className={`w-4/5 max-w-screen-xl flex flex-col ${block.split_type === 'text-left' ? 'md:flex-row' : 'md:flex-row-reverse'} md:gap-16`}>
                 <div className="flex-1 gap-8 flex flex-col justify-center">
                     {block.section_title && <div className={`text-5xl font-bold ${block.split_type === 'text-left' ? 'text-white' : 'text-black'}`}>{block.section_title}</div>}
                     <div className={`text-lg ${block.split_type === 'text-left' ? 'text-white opacity-70' : 'text-grey'}`} dangerouslySetInnerHTML={{ __html: block.section_text }} />
                     <div>
                         {block.section_buttons?.length &&
                             block.section_buttons.map((button) => (
-                                <div className="flex flex-row" key={button.link}>
+                                <div className="flex flex-row pb-8 md:pb-0" key={button.link}>
                                     <a
                                         target="_blank"
                                         href={button.link}

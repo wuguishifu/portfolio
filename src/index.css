@@ -119,6 +119,6 @@ html {
     background: linear-gradient(30deg, rgb(40, 84, 69) 0%, rgb(202, 230, 219) 100%);
 }
 
-.gradient-orange {
-    background: linear-gradient(30deg, rgb(255, 128, 0) 0%, rgb(255, 204, 0) 100%);
+.gradient-peach {
+    background: linear-gradient(30deg, rgb(250, 138, 138) 0%, rgb(198, 124, 204) 100%);
 }

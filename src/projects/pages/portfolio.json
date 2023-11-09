@@ -2,7 +2,7 @@
     "title": "Portfolio Website",
     "meta": "portfolio",
     "image_path": "/projects/portfolio/",
-    "background": "gradient-orange",
+    "background": "gradient-peach",
     "hide_shadow": false,
     "blocks": [
         {

@@ -21,9 +21,9 @@ export default ({ block, image_path, background, hide_shadow = false }: Carousel
 
     return (
         <div className={`flex flex-col items-center ${background} py-8 ${sectionVisible || hasAppeared ? 'animate-fade-in' : 'opacity-0'}`} ref={ref}>
-            <div className="w-1/2 flex flex-row items-center justify-center">
-                <i className="ri-arrow-left-s-line px-8 text-[42px] text-white cursor-pointer transition-all duration-300 hover:opacity-50" onClick={last} />
-                <div className="flex flex-col items-center w-[75%]">
+            <div className="w-full md:w-1/2 flex flex-row items-center justify-center">
+                <i className="ri-arrow-left-s-line px-2 md:px-8 text-[42px] text-white cursor-pointer transition-all duration-300 hover:opacity-50" onClick={last} />
+                <div className="flex flex-col items-center w-[95%] md:w-[75%]">
                     <img
                         className={`rounded-lg ${hide_shadow ? '' : 'shadow'}`}
                         src={image_path + block.images[index]}
@@ -31,7 +31,7 @@ export default ({ block, image_path, background, hide_shadow = false }: Carousel
                     />
                     <Bullets index={index} num={block.images.length} className="mt-8" onClick={setIndex} />
                 </div>
-                <i className="ri-arrow-right-s-line px-8 text-[42px] text-white cursor-pointer transition-all duration-300 hover:opacity-50" onClick={next} />
+                <i className="ri-arrow-right-s-line px-2 md:px-8 text-[42px] text-white cursor-pointer transition-all duration-300 hover:opacity-50" onClick={next} />
             </div>
         </div>
     );
