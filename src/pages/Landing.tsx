@@ -23,8 +23,8 @@ export default function Landing() {
                 <title>Bo</title>
             </Helmet>
             <div className="flex-1 place-content-center z-10">
-                <div className="text-[5em] font-bold mt-0 mb-2 mx-0 animate-fade-in fill-mode-both">Hey there!</div>
-                <div className="text-[4em] font-bold mt-0 mb-2 mx-0 animate-fade-in animation-delay-200 fill-mode-both">
+                <div className="text-[5em] font-bold mt-0 mb-4 mx-0 animate-fade-in fill-mode-both leading-[1]">Hey there!</div>
+                <div className="text-[4em] font-bold mt-0 mb-4 mx-0 animate-fade-in animation-delay-200 fill-mode-both leading-[1]">
                     I'm <span className="text-blue">Bo Bramer</span>.
                 </div>
                 <div className="text-[1.2em] text-grey mt-0 mb-2 mx-0 animate-fade-in animation-delay-400 fill-mode-both">
@@ -38,7 +38,7 @@ export default function Landing() {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 place-content-center hidden xl:block">
+            <div className="flex-1 place-content-center hidden md:block">
                 <img src={Chibi} className="fixed left-[55%] h-4/5 bottom-0 animate-[fade-in_1.5s] fill-mode-both animation-delay-200" alt="chibi bo" />
             </div>
         </div>
