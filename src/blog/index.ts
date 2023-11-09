@@ -2,7 +2,7 @@ export * from "./Blogs";
 export * from "./Blog";
 
 import safelyStoringAuthenticationData from './pages/securePasswords.md?raw';
-import apiBestPractices from './pages/apiBestPractices.md?raw';
+import apiBestPractices from './pages/apiBestPractices.md?raw'
 
 export const blogs = {
     'safely-storing-authentication-data': {

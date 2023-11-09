@@ -1,0 +1,72 @@
+{
+    "title": "Portfolio Website",
+    "meta": "portfolio",
+    "image_path": "/projects/portfolio/",
+    "background": "gradient-orange",
+    "hide_shadow": false,
+    "blocks": [
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_title": "Portfolio Website",
+            "section_text": "Over the last 3 years, I have redesigned and rebuilt my portfolio website multiple times using multiple frameworks. The first iteration I built was in vanilla HTML, CSS, and JavaScript, and the version you're currently on was built using React and Tailwindcss. I also transitioned from self hosting on my Raspberry Pi to hosting on AWS. I have learned a lot about web development and design through this process, and I am excited to continue to learn and grow as a developer.",
+            "section_image": "main.png"
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "home-0.png",
+                "about-0.png",
+                "experience-0.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "The first iteration of my website was built using HTML, CSS, and JavaScript. I wanted to give it a similar feel to my IDE at the time, Intellij, so I went with a dark mode gray and orange color theme. However, a lot of the pages were poorly laid out and resulted in a cramped feeling.<br><br>On the \"Languages\" section of the \"About\" page, I also had the idea to use a star rating to show my proficiency in each language. I thought this was a cool idea at the time, but I have since learned that this is not a good way to show proficiency in a language. I also included a dropdown that had information like how long I've been using this language, and what my go-to IDE was. I thought this looked good at the time, but the dropdown was poorly implemented and didn't work well on mobile.<br><br>I also tried to squish every project I've done onto the same page, which I thought would make it easy to quickly see what I've been up to. However, I decided to abandon this idea in the next iteration in favor of having multiple pictures of the actual project.<br><br>Overall, I think this was a good first attempt at a portfolio website, but it was definitely lacking in a lot of areas."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "home-1.png",
+                "about-1.png",
+                "projects-1.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "For my second revision (deployed around 1 year ago), I decided to go for a more modern look. On the home page, I added a Chibi version of myself to give it a more personal feel, and I redesigned the about page to just have a quick blurb about what I've been up to recently. I also replaced the \"Experience\" page with a \"Projects\" page, where I added a mosaic with a quick description of each project, and a single image. Clicking on one of these tiles would take the user to a page where I went over what the project did, and had a few more images.<br><br>Some of the main issues I had with this iteration of my portfolio were:<ol><li>The project pages felt like advertisements and didn't really show what I did or what I learned.</li><li>It was really annoying to make new pages, as I was still using vanilla HTML and CSS.</li></ol>Because of these issues, it was difficult to continue adding projects to this page, and it became more of a chore to maintain than something I was really proud of."
+        },
+        {
+            "type": "carousel",
+            "images": [
+                "projects-2.png",
+                "qc-2.png",
+                "blog-2.png"
+            ]
+        },
+        {
+            "type": "text",
+            "section_text": "My third and current iteration (deployed around 1 month ago) uses React and Tailwind CSS to make creating new pages significantly easier. This was really nice, as it let me really quickly experiment with other pages on my website, like my Quick Codes page or my Blog. Because of this, my portfolio website has become something I am really proud of, and it feels a lot more fun and personal to update and maintain.<br><br>I also modified the design of my projects page to not use a mosaic, and I'll talk a little more about why I did that in the next section."
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_title": "Version \"2.9\"",
+            "section_text": "This version is when I initially switched to React and was still using vanilla CSS. I call this version \"2.9\" because the only thing that changed was that I was using React instead of vanilla HTML. All of the content was the same, and the project pages still felt more like advertisements than anything else. The benefit of using React, however, was that I could streamline the process of making new pages. To do this, I created a custom page component that would load a project JSON file into it, parse the file, and then render each section as specified in the file.<br><br>On the right is an example of what these JSON files looked like.",
+            "section_image": "2.9.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-right",
+            "section_text": "One of the main issues with this was that every project page looked exactly the same, and I couldn't do anything to change it. Every block had one image and a text blurb, and it looked very repetitive.<br><br>To account for this, I rebuilt my website again. This time, I used Tailwind CSS, and I changed my strategy on rendering project pages. Instead of having a one-block-fits-all, I decided to let the JSON specifically tell React what block to render, what data to pass to it, and what order to render it in. This allowed me to have a lot more flexibility in how I designed my project pages, and I think it looks a lot better now.<br><br>On the left is an example of what these JSON files look like. The three main block types I use are Split (what this block is), Carousel, and Text. This system lets me quickly build project pages (faster than editing HTML, CSS, or React code), while still giving me the flexibility to make each page unique, and gives me the option to add more custom block types if I ever need.",
+            "section_image": "3.0.png"
+        },
+        {
+            "type": "split",
+            "split_type": "text-left",
+            "section_title": "Version 3.0",
+            "section_text": "The last thing I had to change before I felt truly proud of my portfolio was to give every project page more substance. Instead of just explaining what it did like an advertisement, I rewrote every page to be more like a technical writeup of the project. This allowed me to talk about things like design decisions, issues I faced, things I found interesting, etc., and I think that this was one of the most important changes I've made so far. Doing this also gave me room to add other sections that I could write about, like my Quick Codes page and my Blog.<br><br>Overall, I am really happy with how my portfolio website has turned out, and I am excited to continue to learn and grow as a developer. The current version of the website is live, and I will update this page if I ever make any major changes to it.",
+            "section_image": "brute-force.png"
+        }
+    ]
+}

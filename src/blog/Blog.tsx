@@ -21,7 +21,6 @@ export function Blog() {
                     remarkPlugins={[rehypeHighlight, remarkGfm, supersub]}
                     components={{
                         img: ({ node, ...props }) => <img {...props} className="w-2/3 mx-auto" />,
-                        // img: ({ node, ...props }) => <div className="w-full flex flex-row justify-center"><img {...props} className="w-2/3" /></div>,
                         table: ({ node, ...props }) => <div className="w-full flex flex-row justify-center"><table {...props} className="w-1/2" /></div>,
                         a: ({ node, ...props }) => <a {...props} target="_blank" className="text-blue hover:underline" />,
                         ul: ({ node, ...props }) => <ul {...props} className="list-disc list-inside text-grey" />,

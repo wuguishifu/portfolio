@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+ol {
+    list-style-type: decimal;
+    padding-left: 3rem;
+}
+
 :root {
     font-family: 'Nunito', sans-serif;
     line-height: 1.5;
@@ -112,4 +117,8 @@ html {
 
 .gradient-green {
     background: linear-gradient(30deg, rgb(40, 84, 69) 0%, rgb(202, 230, 219) 100%);
+}
+
+.gradient-orange {
+    background: linear-gradient(30deg, rgb(255, 128, 0) 0%, rgb(255, 204, 0) 100%);
 }
