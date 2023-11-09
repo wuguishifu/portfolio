@@ -5,7 +5,7 @@ import { BlockSplit, Page } from "./page";
 
 export default function Projects() {
     return (
-        <div>
+        <>
             <Helmet>
                 <title>Bo | Projects</title>
             </Helmet>
@@ -16,7 +16,7 @@ export default function Projects() {
                     {Object.values(projects).map((project, index) => <ProjectRow project={project} reverse={!!(index % 2)} key={project.title} style={{ animationDelay: `${(index + 2) * 200}ms` }} />)}
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
@@ -31,11 +31,13 @@ function ProjectRow({ project, reverse, style }: { project: Page; reverse: boole
                 {project.title && <div className="text-4xl md:text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></div>}
                 <div className="text-lg text-white opacity-70 md:block hidden">{block.section_text}</div>
             </div>
-            <img
-                className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg flex-[1] flex-shrink overflow-hidden`}
-                src={project.image_path + block.section_image}
-                alt={block.section_image}
-            />
+            <div className="flex-[1] flex-shrink overflow-hidden">
+                <img
+                    className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg`}
+                    src={project.image_path + block.section_image}
+                    alt={block.section_image}
+                />
+            </div>
         </Link>
     );
 }
