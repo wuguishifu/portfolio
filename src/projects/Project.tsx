@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import Carousel from "../components/blocks/Carousel";
 import Split from "../components/blocks/Split";
 import Text from "../components/blocks/Text";
-import projects from '../projects';
-import { BlockCarousel, BlockCarouselSplit, BlockSplit, BlockText, Page } from "../projects/page";
-import Error from './Error';
+import projects from '.';
+import { BlockCarousel, BlockCarouselSplit, BlockSplit, BlockText, Page } from "./page";
+import Error from '../pages/Error';
 import { Helmet } from "react-helmet-async";
 import SplitCarousel from "../components/blocks/SplitCarousel";
 

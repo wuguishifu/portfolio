@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import codes from "../quick-codes";
-import { BlockSplit, Page } from "../quick-codes/page";
+import codes from ".";
+import { BlockSplit, Page } from "./page";
 
 export default function QuickCodes() {
     return (

@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import Carousel from "../components/blocks/Carousel";
 import Split from "../components/blocks/Split";
 import Text from "../components/blocks/Text";
-import quickCodes from '../quick-codes';
-import { BlockCarousel, BlockSplit, BlockText, Page } from "../quick-codes/page";
-import Error from './Error';
+import quickCodes from '.';
+import { BlockCarousel, BlockSplit, BlockText, Page } from "./page";
+import Error from '../pages/Error';
 import { Helmet } from "react-helmet-async";
 
 export default function QuickCode() {

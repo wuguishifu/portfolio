@@ -3,10 +3,10 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Error from './pages/Error';
-import QuickCodes from './pages/QuickCodes';
-import Project from './pages/Project';
-import Projects from './pages/Projects';
-import QuickCode from './pages/QuickCode';
+import QuickCodes from './quick-codes/QuickCodes';
+import Project from './projects/Project';
+import Projects from './projects/Projects';
+import QuickCode from './quick-codes/QuickCode';
 import PlanetExample from './pages/planets/PlanetExample';
 import { useEffect } from 'react';
 import { Blogs, Blog } from './blog';
@@ -57,7 +57,7 @@ function Wrapper() {
                     <Link to={'/about'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">About</Link>
                     <Link to={'/projects'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Projects</Link>
                     <Link to={'/quick-codes'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Quick Codes</Link>
-                    <Link to={'/blog'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Blog</Link>
+                    {/* <Link to={'/blog'} className="font-normal text-base leading-4 text-grey transition-all duration-[0.3s] ml-5 hover:text-black cursor-pointer">Blog</Link> */}
                 </div>
             </div>
             <Outlet />
