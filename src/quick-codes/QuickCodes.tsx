@@ -31,11 +31,13 @@ function CodeRow({ project, reverse, style }: { project: Page; reverse: boolean;
                 {project.title && <div className="text-4xl md:text-5xl font-bold text-white">{project.title} <i className="ri-external-link-line" /></div>}
                 <div className="text-lg text-white opacity-70 md:block hidden">{block.section_text}</div>
             </div>
-            <img
-                className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg flex-[1] flex-shrink overflow-hidden`}
-                src={project.image_path + block.section_image}
-                alt={block.section_image}
-            />
+            <div className="flex-[1] flex-shrink">
+                <img
+                    className={`${project.hide_shadow ? '' : 'shadow'} rounded-lg`}
+                    src={project.image_path + block.section_image}
+                    alt={block.section_image}
+                />
+            </div>
         </Link>
     );
 }
