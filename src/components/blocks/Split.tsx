@@ -34,7 +34,7 @@ export default ({ properties, block, image_path }: SplitProps) => {
                         }
                     </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 flex-col items-center justify-center flex">
                     <img
                         className={`rounded-lg ${(properties.hide_shadow && !block.force_show_shadow) ? '' : 'shadow'}`}
                         src={image_path + block.section_image}

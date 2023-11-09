@@ -3,9 +3,10 @@ import Carousel from "../components/blocks/Carousel";
 import Split from "../components/blocks/Split";
 import Text from "../components/blocks/Text";
 import projects from '../projects';
-import { BlockCarousel, BlockSplit, BlockText, Page } from "../projects/page";
+import { BlockCarousel, BlockCarouselSplit, BlockSplit, BlockText, Page } from "../projects/page";
 import Error from './Error';
 import { Helmet } from "react-helmet-async";
+import SplitCarousel from "../components/blocks/SplitCarousel";
 
 export default function Project() {
     const { project = '' } = useParams();
@@ -38,6 +39,8 @@ function Block(props: BlockProps) {
             return <Text block={block as BlockText} />;
         case 'split':
             return <Split block={block as BlockSplit} image_path={properties.image_path} properties={properties} />;
+        case 'split_carousel':
+            return <SplitCarousel block={block as BlockCarouselSplit} image_path={properties.image_path} properties={properties} background={properties.background} hide_shadow={properties.hide_shadow} />;
         default: return <pre>{JSON.stringify(block, null, 2)}</pre>
     }
 }
